@@ -1,0 +1,34 @@
+{
+  "name": "short-road-js",
+  "version": "1.0.0",
+  "description": "Short Road server in JS",
+  "main": "app/short-road-app.js",
+  "scripts": {
+    "start": "forever start app/short-road-app.js",
+    "watch": "forever -w app/short-road-app.js",
+    "stop": "forever stop app/short-road-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaimuk/short-road-js.git"
+  },
+  "author": "gaimuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaimuk/short-road-js/issues"
+  },
+  "homepage": "https://github.com/gaimuk/short-road-js#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "helmet": "^3.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.2",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
