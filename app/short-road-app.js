@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const urlRouter = require('./routes/url-router')
+const urlRouter = require('./routes/url/url-router')
 const helmet = require('helmet')
-const { ErrorRes } = require('./models/res/error-res')
+const { ErrorResponse } = require('./routes/error-response')
 
 let app = express()
 
@@ -14,7 +14,7 @@ app.use('/', urlRouter)
 
 // No routes matched, HTTP 404
 app.use(function (req, res, next) {
-  let err = new Error('No routes matched')
+  let err = new Error(`No routes matched, path: ${req.url}`)
   err.status = 404
   next(err)
 })
@@ -26,7 +26,9 @@ app.use(function (err, req, res, next) {
     return next(err)
   }
 
-  let errorRes = new ErrorRes('001', err.message)
+  // TODO: Return different error response according to error type
+
+  let errorRes = new ErrorResponse('001', err.message)
   res.status(err.status || 500).json(errorRes)
 })
 

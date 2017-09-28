@@ -1,8 +1,8 @@
-class ErrorRes {
+class ErrorResponse {
   constructor (code, message) {
     this.code = code
     this.message = message
   }
 }
 
-module.exports.ErrorRes = ErrorRes
+module.exports.ErrorResponse = ErrorResponse
